@@ -79,7 +79,7 @@
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
                     <h1 class="display-4 fw-bolder">남씨네</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">-</p>
+                    <p class="lead fw-normal text-white-50 mb-0">홈페이지 메인 화면입니다.</p>
                 </div>
             </div>
         </header>
@@ -295,6 +295,7 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
+        <script src="resources/js/headerScripts.js"></script>
         <script src="resources/js/homeScripts.js"></script>
     </body>
 </html>

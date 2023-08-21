@@ -38,14 +38,14 @@
             </div>
         </nav>
          <!-- Header-->
-		 <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">남씨네</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">로그인 화면입니다.</p>
-                </div>
-            </div>
-        </header>
+<!-- 		 <header class="bg-dark py-5"> -->
+<!--             <div class="container px-4 px-lg-5 my-5"> -->
+<!--                 <div class="text-center text-white"> -->
+<!--                     <h1 class="display-4 fw-bolder">남씨네</h1> -->
+<!--                     <p class="lead fw-normal text-white-50 mb-0">로그인 화면입니다.</p> -->
+<!--                 </div> -->
+<!--             </div> -->
+<!--         </header> -->
 		<!-- Section -->
 		<section class="py-5">
 			<div style="text-align:center; font-size:50px;" class="container px-4 px-lg-5 mt-5">
@@ -73,6 +73,7 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
+        <script src="resources/js/headerScripts.js"></script>
         <script src="resources/js/loginScripts.js"></script>
 </body>
 </html>

@@ -85,18 +85,22 @@
         </header>
 		<!-- Section-->
 		<section class="py-5" style='width:2000px;height:1000px;'>
-		<b><a href='/'>홈</a></b> > <b><a href="/showAll">전체 상품</a></b> > <b><a href="/${product.category}">${product.category}</a></b><br>
-		<hr>
+		<div style="width:460px; text-align:right;" class="text-dark">
+			<b><a href='/'>홈</a></b> > <b><a href="/showAll">전체 상품</a></b> > <b><a href="/${product.category}">${product.category}</a></b><br>
+		</div>
+		<div class="text-center">
+			<hr style="width:70%; margin: 0px auto;">
+		</div>
 			<div>
 				<div class="text-center px-4 px-lg-5 my-5">
-					<table>
+					<table align="center">
 						<tr>
 							<td>
 								<img src="img/${product.product_img}" style='width:500px; height:500px'></img>
 							</td>
 							<td>
-								<h1>${product.product_name}</h1>
-								<h2 style="text-align:right" id=price>${product.product_price} 원</h2>
+								<h2>${product.product_name}</h2>
+								<h1 style="text-align:right" id=price>${product.product_price} 원</h1>
 								<select size=1 id="size">
 									<option>사이즈 선택</option>
 									<c:forEach items="${productSize}" var="size">
@@ -130,6 +134,7 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
+        <script src="resources/js/headerScripts.js"></script>
         <script src="resources/js/viewProductScripts.js"></script>
     </body>
 </html>

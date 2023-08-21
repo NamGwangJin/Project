@@ -20,21 +20,22 @@
             </div>
         </nav>
          <!-- Header-->
-		 <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">남씨네</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">회원가입 완료 화면입니다.</p>
-                </div>
-            </div>
-        </header>
+<!-- 		 <header class="bg-dark py-5"> -->
+<!--             <div class="container px-4 px-lg-5 my-5"> -->
+<!--                 <div class="text-center text-white"> -->
+<!--                     <h1 class="display-4 fw-bolder">남씨네</h1> -->
+<!--                     <p class="lead fw-normal text-white-50 mb-0">회원가입 완료 화면입니다.</p> -->
+<!--                 </div> -->
+<!--             </div> -->
+<!--         </header> -->
 		<!-- Section -->
 		<section class="py-5">
-			<div style="text-align:center; font-size:50px;" class="container px-4 px-lg-5 mt-5">
+			<div style="text-align:center; font-size:40px;" class="container px-4 px-lg-5 mt-5">
 				<strong class="navbar-brand">NAMCNE</strong>
 			</div>
-			<div class="container px-4 px-lg-5 mt-5" align="center">
-				<strong style="font-size:50px;color:green;"><u>회원가입이 완료되었습니다 !</u></strong><br>
+			<div class="container px-4 px-lg-5" align="center">
+				<img src="img/check.gif" style="width:320px;"><br>
+				<strong style="font-size:50px;color:green;">회원가입이 완료되었습니다 !</strong><br><br>
 				<button id='goLogin' class="btn btn-outline-dark">로그인 하러가기</button>
 			</div>
 			<div class="container px-4 px-lg-5 mt-5 py-5">
