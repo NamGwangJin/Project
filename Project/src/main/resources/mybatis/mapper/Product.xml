@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+									  	  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.himedia.springboot.ProductDAO">
+<select id="getProducts" resultType="com.himedia.springboot.ProductDTO">
+	select product_id, product_name, product_price, product_img, category from product
+</select>
+
+<select id="getProduct" resultType="com.himedia.springboot.ProductDTO">
+	select product_name, product_price, product_img, category from product where product_id=#{param1}
+</select>
+
+<select id="getCategory" resultType="com.himedia.springboot.ProductDTO">
+	select product_id, product_name, product_price, product_img, category from product where category=#{param1}
+</select>
+
+<select id="getSize" parameterType="int">
+	select size from product where product_id=#{param1}
+</select>
+</mapper>

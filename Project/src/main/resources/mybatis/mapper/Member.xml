@@ -2,6 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 									  	  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.himedia.springboot.MemberDAO">
-
-
+<insert id="signUp">
+insert into member set userid=#{param1}, passcode=#{param2}, name=#{param3}, mobile=#{param4}, gender=#{param5}, birthday=#{param6}
+</insert>
+<select id="doLogin" resultType="int">
+select count(*) from member where userid=#{param1} and passcode=#{param2}
+</select>
+<select id="loginSuccess" resultType="com.himedia.springboot.MemberDTO">
+select name,userid from member where userid=#{param1}
+</select>
 </mapper>
