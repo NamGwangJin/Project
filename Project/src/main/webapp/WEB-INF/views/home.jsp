@@ -10,7 +10,7 @@
         <meta name="author" content="" />
         <title>NAMCNE SHOP</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="resources/assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="resources/assets/favicon.png" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -55,22 +55,20 @@
 		                    </li>
 	                    </ul>
                     </c:if>
-                    <form class="d-flex">
-                    	<c:if test="${name == null }">
-	                        <button class="btn btn-outline-dark" type="button" id="noLoginCart">
-	                            <i class="bi-cart-fill me-1"></i>
-	                            장바구니
-	                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-	                        </button>
-	                    </c:if>
-	                    <c:if test="${name != null}">
-                		    <button class="btn btn-outline-dark" type="submit" id="okLoginCart">
-	                            <i class="bi-cart-fill me-1"></i>
-	                            장바구니
-	                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-	                        </button>
-	                    </c:if>
-                    </form>
+                   	<c:if test="${name == null }">
+                        <button class="btn btn-outline-dark" id="noLoginCart">
+                            <i class="bi-cart-fill me-1"></i>
+                            장바구니
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </c:if>
+                    <c:if test="${name != null}">
+               		    <button class="btn btn-outline-dark" id="okLoginCart">
+                            <i class="bi-cart-fill me-1"></i>
+                            장바구니
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </c:if>
                 </div>
             </div>
         </nav>

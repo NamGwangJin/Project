@@ -10,7 +10,7 @@
         <meta name="author" content="" />
         <title>상품 상세 보기</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="resources/assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="resources/assets/favicon.png" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -46,7 +46,7 @@
                    		</div>
                     	<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
 	                    	<li class="nav-item dropdown">
-		                    	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style='font-weight:bold;'><Strong>${name}</Strong> 님</a>
+		                    	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style='font-weight:bold;'><Strong id=userName>${name}</Strong> 님</a>
 		                    	<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 		                    		<li><a class="dropdown-item" href="/mypage">마이페이지</a></li>
 		                    		<li><hr class="dropdown-divider" /></li>
@@ -55,22 +55,20 @@
 		                    </li>
 	                    </ul>
                     </c:if>
-                    <form class="d-flex">
-                    	<c:if test="${name == null }">
-	                        <button class="btn btn-outline-dark" type="button" id="noLoginCart">
-	                            <i class="bi-cart-fill me-1"></i>
-	                            장바구니
-	                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-	                        </button>
-	                    </c:if>
-	                    <c:if test="${name != null}">
-                		    <button class="btn btn-outline-dark" type="submit" id="okLoginCart">
-	                            <i class="bi-cart-fill me-1"></i>
-	                            장바구니
-	                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-	                        </button>
-	                    </c:if>
-                    </form>
+                   	<c:if test="${name == null }">
+                        <button class="btn btn-outline-dark" id="noLoginCart">
+                            <i class="bi-cart-fill me-1"></i>
+                            장바구니
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </c:if>
+                    <c:if test="${name != null}">
+               		    <button class="btn btn-outline-dark" id="okLoginCart">
+                            <i class="bi-cart-fill me-1"></i>
+                            장바구니
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </c:if>
                 </div>
             </div>
         </nav>
@@ -84,6 +82,7 @@
             </div>
         </header>
 		<!-- Section-->
+		<input type="hidden" id="img" value="${product.product_img}">
 		<section class="py-5" style='width:2000px;height:1000px;'>
 		<div style="width:460px; text-align:right;" class="text-dark">
 			<b><a href='/'>홈</a></b> > <b><a href="/showAll">전체 상품</a></b> > <b><a href="/${product.category}">${product.category}</a></b><br>
@@ -96,10 +95,10 @@
 					<table align="center">
 						<tr>
 							<td>
-								<img src="img/${product.product_img}" style='width:500px; height:500px'></img>
+								<img src="product/${product.product_img}" style='width:500px; height:500px'></img>
 							</td>
 							<td>
-								<h2>${product.product_name}</h2>
+								<h2 id="prodName">${product.product_name}</h2>
 								<h1 style="text-align:right" id=price>${product.product_price} 원</h1>
 								<select size=1 id="size">
 									<option>사이즈 선택</option>
@@ -109,16 +108,27 @@
 								</select>
 								<hr>
 								<div id='qtyAndPrice'>
-									
+									<!--  JAVA SCRIPT -->
 								</div>
 								<hr>
-								<button class="btn btn-outline-dark" id="order">
-	                            	구매하기
-	                        	</button>
-	                        	<button class="btn btn-outline-dark" type="submit" id="okLoginCart">
-		                            <i class="bi-cart-fill me-1"></i>
-		                            장바구니 담기
-	                        	</button>
+								<c:if test="${name != null}">
+									<button class="btn btn-outline-dark" id="okLoginOrder">
+		                            	구매하기
+		                        	</button>
+		                        	<button class="btn btn-outline-dark" type="button" id="okLoginAddCart">
+			                            <i class="bi-cart-fill me-1"></i>
+			                            장바구니 담기
+		                        	</button>
+	                        	</c:if>
+	                        	<c:if test="${name == null}">
+        							<button class="btn btn-outline-dark" id="noLoginOrder">
+		                            	구매하기
+		                        	</button>
+		                        	<button class="btn btn-outline-dark" type="button" name="noLoginAddCart">
+			                            <i class="bi-cart-fill me-1"></i>
+			                            장바구니 담기
+		                        	</button>
+	                        	</c:if>
 							</td>
 						</tr>
 					</table>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
 <!DOCTYPE html>
 <html lang="ko">
     <head>
@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>남씨네 - 악세서리</title>
+        <title>남씨네 주문하기</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="resources/assets/favicon.png" />
         <!-- Bootstrap icons-->
@@ -42,8 +42,8 @@
                     	<button class="btn btn-outline-dark" id='btnLogin'>로그인</button> &nbsp;
                     </c:if>
                     <c:if test="${name != null}">
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                   		</div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    </div>
                     	<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
 	                    	<li class="nav-item dropdown">
 		                    	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style='font-weight:bold;'><Strong>${name}</Strong> 님</a>
@@ -72,40 +72,89 @@
                 </div>
             </div>
         </nav>
-        <!-- Header-->
+         <!-- Header-->
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
                     <h1 class="display-4 fw-bolder">남씨네</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">악세서리 상품 사이트입니다.</p>
+                    <p class="lead fw-normal text-white-50 mb-0">주문하기 화면입니다.</p>
                 </div>
             </div>
         </header>
-		<!-- Section-->
-		<section class="py-5">
-            <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                   <c:forEach items="${acc}" var="pList">
-	                    <div class="col mb-5">
-	                        <div class="card h-100">
-	                            <img class="card-img-top" src="product/${pList.product_img}" alt="이미지가 없습니다." />
-	                            <div class="card-body p-4">
-	                                <div class="text-center">
-	                                    ${pList.product_id}
-	                                    <h5 class="fw-bolder">${pList.product_name}</h5>
-	                                    상품 가격
-	                                    ${pList.product_price}
-	                                </div>
-	                            </div>
-	                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-	                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/viewProduct?id=${pList.product_id}">상품 상세 보기</a></div>
-	                            </div>
-	                        </div>
-	                    </div>
-					</c:forEach>
-                </div>
-            </div>
-		</section>
+		<!--Section -->
+        <section class="py-5">
+        	 <div class="container px-4 px-lg-5 mt-5">
+        	 <!-- 주문자 정보 -->
+				<h3>주문자 정보</h3>
+				<hr style="background-color:black;height:5px;">
+				<table>
+					<tr><td>&nbsp;이 름  &nbsp;&nbsp;</td><td><input type="text" value="${order.order_name}"></td></tr>
+				</table>
+				<hr>
+				<table>
+					<tr><td>연락처 &nbsp;</td><td><input type="text" size=3></td><td>-</td><td><input type="text" size=4></td><td>-</td><td><input type="text" size=4></td></tr>
+				</table>
+				<hr>
+				<table>
+					<tr><td>이메일 &nbsp;</td><td><input type="text"> @ <input type="text"> <select size=1><option>직접입력</option>
+																																						 <option>naver.com</option>
+																																						 <option>gmail.com</option>
+																																  </select></td></tr>
+				</table>
+				<hr>	
+				<br>
+			<!-- 배송 정보 -->
+				<h3>배송 정보</h3>
+				<sup style="text-align:right;"><input type=checkbox>위 사항과 같음</sup>
+				<hr style="background-color:black;height:5px;">													  
+				<table>	
+					<tr><td>&nbsp;이 름  &nbsp;&nbsp;</td><td><input type="text" value=""></td></tr>
+				</table>
+				<hr>
+				<table>
+					<tr><td>연락처 &nbsp;</td><td><input type="text" size=3></td><td>-</td><td><input type="text" size=4></td><td>-</td><td><input type="text" size=4></td></tr>
+				</table>
+				<hr>
+				<table>
+					<tr><td rowspan=2>주 소 &nbsp;</td><td><input type="text" size=6>&nbsp;<button id=zipcode class="btn btn-outline-dark" style="height:30px;">우편번호</button></td></tr>
+					<tr><td><input type="text"></td><td><input type="text"></td></tr>
+				</table>
+				<hr>
+				<table>
+					<tr><td rowspan=3>배송 메세지</td><td><textarea rows="3" cols="50"></textarea></td></tr>
+				</table>
+				<hr>
+				<br>
+			<!-- 상품 정보 -->
+				<h3><img src="img/favicon.png" style="width:30px;"></img>NAMCNE</h3>
+				<hr style="background-color:black;height:5px;">
+				<div class="text-center">
+					<table border="1" cellspacing="0" cellpadding="0" width="90%" align="center">
+						<thead style="background-color:beige;">
+							<tr width="90%"><td width="60%">상품 / 옵션정보</td><td>수량</td><td>주문금액</td></tr>
+						</thead>
+						<tbody>
+							<tr><td><img src="product/${order.order_img}">&nbsp; 상품명 : ${order.order_product} / 사이즈 : ${order.order_size}</td><td>${order.order_qty}</td><td>${order.order_price}</td></tr>
+						</tbody>
+					</table>
+				</div>
+				<br>
+				<div>
+					<h3>결제 정보</h3>
+					<hr style="background-color:black;height:5px;">
+					<table>
+						<tr><td rowspan=3>결제 수단</td><td><input type="radio" name="payment" value="신용카드">신용카드</td></tr>
+						<tr><td><input type="radio" name="payment" value="무통장입금">무통장 입금</td></tr>
+						<tr><td><input type="radio" name="payment" value="휴대폰결제">휴대폰 결제</td></tr>
+					</table>
+				</div>
+				<hr style="background-color:black;height:5px;">
+				<div class="text-center">
+				<button id=orderOk class="btn btn-outline-dark">주문 하기</button> &nbsp; <button id=orderCancle class="btn btn-outline-dark">주문 취소</button>
+				</div>
+			 </div>
+			<!-- 결제 정보 -->
+        </section>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; NAMCNE Website 2023</p></div>
@@ -116,6 +165,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="resources/js/headerScripts.js"></script>
-        <script src="resources/js/categoryScripts.js"></script>
-    </body>
+        <script src="resources/js/orderScripts.js"></script>
+</body>
 </html>

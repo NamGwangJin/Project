@@ -44,6 +44,7 @@ public class HomeController {
 			HttpSession session = req.getSession();
 			MemberDTO memberData = md.loginSuccess(id);
 			session.setAttribute("name", memberData.getName());
+			session.setAttribute("id", memberData.getUserid());
 		} else {
 			HttpSession session = req.getSession();
 			session.setAttribute("name", "");

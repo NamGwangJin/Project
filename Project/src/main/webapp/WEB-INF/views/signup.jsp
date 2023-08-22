@@ -7,7 +7,7 @@
 	<meta charset="UTF-8">
 	<title>남씨네 회원가입</title>
      	<!-- Favicon-->
-      <link rel="icon" type="image/x-icon" href="resources/assets/favicon.ico" />
+      <link rel="icon" type="image/x-icon" href="resources/assets/favicon.png" />
       <!-- Bootstrap icons-->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
       <!-- Core theme CSS (includes Bootstrap)-->
@@ -37,10 +37,10 @@
 				<form method="post" action="/signUpOk" id="formSignUp">
 				<table align=center>
 					<tr><td>로그인 아이디</td><td><input type=text name=logid id=id></td></tr>
-					<tr><td colspan=2><small style='color:red;'>아이디는 16자 이하 영소문자+숫자, 특수문자와 한글을 포함 할 수 없습니다.</small></td></tr>
+					<tr><td colspan=2 id="idvd"><small style='color:red;'><img src="/img/redcheck.png" style="width:20px;">아이디는 8자 이상, 16자 이하 영소문자+숫자만 입력 가능합니다.</small></td></tr>
 					<tr><td>비 밀 번 호</td><td><input type=password name=pwd id=pw1></td></tr>
 					<tr><td>비밀번호 확인</td><td><input type=password name=pwd id=pw2></td></tr>
-					<tr><td colspan=2><small style='color:red;'>비밀번호는 16자 이하 영문자+숫자+특수문자의 형태로 이루어져야 합니다.</small></td></tr>
+					<tr><td colspan=2 id="pwvd"><small style='color:red;'><img src="/img/redcheck.png" style="width:20px;">비밀번호는 8자 이상, 16자 이하 영대소문자+숫자의 형태로 이루어져야 합니다.</small></td></tr>
 					<tr><td>실 &nbsp; 명</td><td><input type=text name=name id=name></td></tr>
 					<tr><td>휴대폰 번호</td><td><input type=text name=mobile id=mobile placeholder='ex)010-1234-5678'></td></tr>
 					<tr><td>성 &nbsp; 별</td><td><input type=radio name=gender id=male value='남성' checked>남성&nbsp;<input type=radio name=gender id=female value='여성'>여성</td></tr>

@@ -10,7 +10,7 @@
         <meta name="author" content="" />
         <title>남씨네 - 하의</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="resources/assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="resources/assets/favicon.png" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -55,22 +55,20 @@
 		                    </li>
 	                    </ul>
                     </c:if>
-                    <form class="d-flex">
-                    	<c:if test="${name == null }">
-	                        <button class="btn btn-outline-dark" type="button" id="noLoginCart">
-	                            <i class="bi-cart-fill me-1"></i>
-	                            장바구니
-	                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-	                        </button>
-	                    </c:if>
-	                    <c:if test="${name != null}">
-                		    <button class="btn btn-outline-dark" type="submit" id="okLoginCart">
-	                            <i class="bi-cart-fill me-1"></i>
-	                            장바구니
-	                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-	                        </button>
-	                    </c:if>
-                    </form>
+                   	<c:if test="${name == null }">
+                        <button class="btn btn-outline-dark" id="noLoginCart">
+                            <i class="bi-cart-fill me-1"></i>
+                            장바구니
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </c:if>
+                    <c:if test="${name != null}">
+               		    <button class="btn btn-outline-dark" id="okLoginCart">
+                            <i class="bi-cart-fill me-1"></i>
+                            장바구니
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </c:if>
                 </div>
             </div>
         </nav>
@@ -90,7 +88,7 @@
                    <c:forEach items="${bottom}" var="pList">
 	                    <div class="col mb-5">
 	                        <div class="card h-100">
-	                            <img class="card-img-top" src="img/${pList.product_img}" alt="이미지가 없습니다." />
+	                            <img class="card-img-top" src="product/${pList.product_img}" alt="이미지가 없습니다." />
 	                            <div class="card-body p-4">
 	                                <div class="text-center">
 	                                    ${pList.product_id}
@@ -100,8 +98,7 @@
 	                                </div>
 	                            </div>
 	                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-	                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/viewProduct?id=${pList.product_id}">상품 상세 보기</a></div><br>
-	                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"><i class="bi-cart-fill me-1"></i>장바구니 담기</a></div>
+	                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/viewProduct?id=${pList.product_id}">상품 상세 보기</a></div>
 	                            </div>
 	                        </div>
 	                    </div>
