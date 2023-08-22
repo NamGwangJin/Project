@@ -16,6 +16,9 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="resources/css/styles.css" rel="stylesheet" />
     </head>
+<style>
+b { cursor: pointer;}
+</style>
 <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -83,15 +86,15 @@
         </header>
 		<!-- Section-->
 		<input type="hidden" id="img" value="${product.product_img}">
-		<section class="py-5" style='width:2000px;height:1000px;'>
-		<div style="width:460px; text-align:right;" class="text-dark">
-			<b><a href='/'>홈</a></b> > <b><a href="/showAll">전체 상품</a></b> > <b><a href="/${product.category}">${product.category}</a></b><br>
+		<section class="py-5">
+		<div style="width:1200px; text-align:right;" class="text-dark">
+			<b id="home">홈</b> > <b id="showAll">전체 상품</b> > <b id="category">${product.category}</b><br>
 		</div>
-		<div class="text-center">
-			<hr style="width:70%; margin: 0px auto;">
+		<hr style="background-color:black;height:5px;">
+		<div class="container px-4 px-lg-5 my-5">
 		</div>
 			<div>
-				<div class="text-center px-4 px-lg-5 my-5">
+				<div class="text-center">
 					<table align="center">
 						<tr>
 							<td>
@@ -108,7 +111,7 @@
 								</select>
 								<hr>
 								<div id='qtyAndPrice'>
-									<!--  JAVA SCRIPT -->
+									<!-- JAVA SCRIPT -->
 								</div>
 								<hr>
 								<c:if test="${name != null}">

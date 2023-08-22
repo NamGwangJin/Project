@@ -1,5 +1,7 @@
 package com.himedia.springboot;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +15,7 @@ import jakarta.servlet.http.HttpSession;
 public class HomeController {
 	@Autowired
 	private MemberDAO md;
+	@Autowired CartDAO cd;
 	
 	@GetMapping("/") // 초기 화면
 	public String home() {
@@ -40,14 +43,16 @@ public class HomeController {
 		String id = req.getParameter("id");
 		String pw = req.getParameter("pw");
 		int data = md.doLogin(id, pw);
-		if (data == 1) {
+		if (data == 1) { // 로그인 성공 시 장바구니 조회, 세션으로 아이디와 이름 전달
 			HttpSession session = req.getSession();
 			MemberDTO memberData = md.loginSuccess(id);
+			ArrayList<CartDTO> cart = cd.getCart(id);
+			session.setAttribute("cart",cart.size());
 			session.setAttribute("name", memberData.getName());
 			session.setAttribute("id", memberData.getUserid());
 		} else {
 			HttpSession session = req.getSession();
-			session.setAttribute("name", "");
+			session.setAttribute("name", null);
 		}
 		return String.valueOf(data);
 	}
@@ -66,6 +71,14 @@ public class HomeController {
 		String birthday = req.getParameter("birthday");
 		md.signUp(userid, passcode, name, mobile, gender, birthday);
 		return "redirect:/signUpOkView";
+	}
+	@PostMapping("/idCheck") // 아이디 중복 검사
+	@ResponseBody
+	public String idCheck(HttpServletRequest req) {
+		String id = req.getParameter("id");
+		int check = md.idCheck(id);
+		System.out.println(check);
+		return String.valueOf(check);
 	}
 	@GetMapping("/signUpOkView") // 회원가입 완료 안내 페이지
 	public String signUpOkView() {

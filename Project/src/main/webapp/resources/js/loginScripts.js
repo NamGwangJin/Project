@@ -10,10 +10,12 @@ $(document)
 		success: function(data){
 			if(data == "1") {
 				document.location ='/'
+			} else {
+				alert('입력하신 회원정보와 일치하는 정보가 없습니다.')
 			}
 		},
 		error: function(){
-			alert('로그인 에러 !')
+			alert("오류가 발생했습니다. 다시 시도해 주세요.")
 		}
 	})
 })

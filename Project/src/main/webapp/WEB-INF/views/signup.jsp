@@ -24,7 +24,7 @@
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
                     <h1 class="display-4 fw-bolder">남씨네</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">회원가입 화면입니다.</p>
+                    <p class="lead fw-normal text-white-50 mb-0">회원가입</p>
                 </div>
             </div>
         </header>
@@ -36,11 +36,11 @@
 			<div class="container px-4 px-lg-5 mt-5">
 				<form method="post" action="/signUpOk" id="formSignUp">
 				<table align=center>
-					<tr><td>로그인 아이디</td><td><input type=text name=logid id=id></td></tr>
-					<tr><td colspan=2 id="idvd"><small style='color:red;'><img src="/img/redcheck.png" style="width:20px;">아이디는 8자 이상, 16자 이하 영소문자+숫자만 입력 가능합니다.</small></td></tr>
+					<tr><td>로그인 아이디</td><td><input type=text name=logid id=id>&nbsp;<input type="button" id="check" value="중복 확인"></td></tr>
+					<tr><td colspan=2 id="idvd"><small style='color:red;'><img src="/img/redcheck.png" style="width:20px;">아이디는 8자 이상, 16자 이하 영소문자,숫자만 입력 가능합니다.</small></td></tr>
 					<tr><td>비 밀 번 호</td><td><input type=password name=pwd id=pw1></td></tr>
 					<tr><td>비밀번호 확인</td><td><input type=password name=pwd id=pw2></td></tr>
-					<tr><td colspan=2 id="pwvd"><small style='color:red;'><img src="/img/redcheck.png" style="width:20px;">비밀번호는 8자 이상, 16자 이하 영대소문자+숫자의 형태로 이루어져야 합니다.</small></td></tr>
+					<tr><td colspan=2 id="pwvd"><small style='color:red;'><img src="/img/redcheck.png" style="width:20px;">비밀번호는 8자 이상, 16자 이하 영대소문자,숫자의 형태로 이루어져야 합니다.</small></td></tr>
 					<tr><td>실 &nbsp; 명</td><td><input type=text name=name id=name></td></tr>
 					<tr><td>휴대폰 번호</td><td><input type=text name=mobile id=mobile placeholder='ex)010-1234-5678'></td></tr>
 					<tr><td>성 &nbsp; 별</td><td><input type=radio name=gender id=male value='남성' checked>남성&nbsp;<input type=radio name=gender id=female value='여성'>여성</td></tr>

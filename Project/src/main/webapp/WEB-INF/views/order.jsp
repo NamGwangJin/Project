@@ -88,7 +88,7 @@
 				<h3>주문자 정보</h3>
 				<hr style="background-color:black;height:5px;">
 				<table>
-					<tr><td>&nbsp;이 름  &nbsp;&nbsp;</td><td><input type="text" value="${order.order_name}"></td></tr>
+					<tr><td>&nbsp;이 름  &nbsp;&nbsp;</td><td><input type="text" value=""></td></tr>
 				</table>
 				<hr>
 				<table>

@@ -3,7 +3,10 @@
 									  	  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.himedia.springboot.CartDAO">
 <insert id="insertCart" parameterType="java.util.HashMap">
-insert into cart set user_id=#{param1}, product_img=#{param2}, product_name=#{param3}, product_size=#{param4}, product_qty=#{param5}, product_price=#{param6}
+	insert into cart set user_id=#{param1}, product_img=#{param2}, product_name=#{param3}, product_size=#{param4}, product_qty=#{param5}, product_price=#{param6}
 </insert>
 
+<select id="getCart" resultType="com.himedia.springboot.CartDTO">
+	select * from cart where user_id=#{param1}
+</select>
 </mapper>
