@@ -66,7 +66,7 @@
                		    <button class="btn btn-outline-dark" id="okLoginCart">
                             <i class="bi-cart-fill me-1"></i>
                             장바구니
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">${cart}</span>
                         </button>
                     </c:if>
                 </div>
@@ -85,10 +85,10 @@
         <section class="py-5">
         	 <div class="container px-4 px-lg-5 mt-5">
         	 <!-- 주문자 정보 -->
-				<h3>주문자 정보</h3>
+				<h3>주문자 정보</h3><input type="hidden" id="userid" value="${id}">
 				<hr style="background-color:black;height:5px;">
 				<table>
-					<tr><td>&nbsp;이 름  &nbsp;&nbsp;</td><td><input type="text" value=""></td></tr>
+					<tr><td>&nbsp;이 름  &nbsp;&nbsp;</td><td><input type="text" value="${userName}"></td></tr>
 				</table>
 				<hr>
 				<table>
@@ -134,7 +134,7 @@
 							<tr width="90%"><td width="60%">상품 / 옵션정보</td><td>수량</td><td>주문금액</td></tr>
 						</thead>
 						<tbody>
-							<tr><td><img src="product/${order.order_img}">&nbsp; 상품명 : ${order.order_product} / 사이즈 : ${order.order_size}</td><td>${order.order_qty}</td><td>${order.order_price}</td></tr>
+							<tr><td><img src="product/${buy.img}">&nbsp; 상품명 : ${buy.product} / 사이즈 : ${buy.size}</td><td>${buy.qty}</td><td>${buy.price}</td></tr>
 						</tbody>
 					</table>
 				</div>

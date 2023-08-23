@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+									  	  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.himedia.springboot.BuyDAO">
+<insert id="buy" parameterType="java.util.HashMap">
+insert into buy set img=#{param1}, product=#{param2}, size=#{param3}, qty=#{param4}, price=#{param5}, id=#{param6} ,name=#{param7}
+</insert>
+
+<select id="getBuy" parameterType="String">
+select * from buy where id=#{param1}
+</select>
+
+<delete id="deleteBuy" parameterType="String">
+delete from buy where id=#{param1}
+</delete>
+</mapper>

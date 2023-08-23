@@ -66,7 +66,7 @@
                		    <button class="btn btn-outline-dark" id="okLoginCart">
                             <i class="bi-cart-fill me-1"></i>
                             장바구니
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">${cart}</span>
                         </button>
                     </c:if>
                 </div>
@@ -88,14 +88,31 @@
         			<h1>CART</h1>
         			<hr class="hrbold">
         			<table border="1" cellspacing="0" cellpadding="0" width="90%" align="center">
-        				<thead style="background-color:beige;">
-        					<tr width="90%"><td width="60%"><b>제품</b></td><td><b>수량</b></td><td><b>가격</b></td><td><b>취소</b></td></tr>
+        				<thead class="bg-dark text-white" style="height:50px;">
+        					<tr width="90%"><td><b>선택</b></td><td width="60%"><b>제품</b></td><td><b>수량</b></td><td><b>가격</b></td><td><b>취소</b></td></tr>
         				</thead>
-        					<tr><td colspan=4><hr></td></tr>
-        				<tbody>
-        					<tr><td>제품사진/제품명/옵션</td><td>수량</td><td>가격</td><td>삭제하기</td></tr>
+        				<tbody id="cartList">
+        					<c:forEach items="${cList}" var="cart">
+        						<tr><td><input name="checkbox" type=checkbox class="form-check-input"></td><td><img src="/product/${cart.product_img}">&nbsp;${cart.product_name} / ${cart.product_size}</td><td>${cart.product_qty}</td><td>${cart.product_price }</td><td><button class="btn btn-outline-dark" style="color:red;">삭제하기</button></td></tr>
+        						<tr><td colspan=5><hr></td></tr>
+        					</c:forEach>
         				</tbody>
         			</table>
+        			<div>
+        				<table border="1" cellspacing="0" cellpadding="0" width="90%" align="center">
+       						<thead class="bg-dark text-white" style="height:50px;">
+        						<tr width="90%"><td>총 금액</td><td></td><td>할인 금액</td><td></td><td>결제할 금액</td></tr>
+        					</thead>
+        					<tbody id=checked>
+        						<tr height="150px;"><td></td><td><img src="img/minus.png" style="width:50px;"></td><td></td><td><img src="img/equal.png" style="width:50px;"></td><td></td></tr>
+        					</tbody>
+        				</table>
+        			</div>
+        			<div>
+        		<table cellspacing="0" cellpadding="0" width="90%" align="center">
+        				<tr width="90%"><td><button class="btn btn-outline-dark">주문하기</button>&nbsp;<button class="btn btn-outline-dark" style='color:red;'>비우기</button></td></tr>
+        		</table>
+        			</div>
         		</div>
         	</div>
         </section>

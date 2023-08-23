@@ -2,11 +2,5 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 									  	  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.himedia.springboot.OrderListDAO">
-<insert id="insertOrder" parameterType="java.util.HashMap">
-insert into orderList set order_img=#{param1}, order_product=#{param2}, order_size=#{param3}, order_qty=#{param4}, order_price=#{param5}, order_id=#{param6} ,order_name=#{param7}
-</insert>
 
-<select id="getOrder" parameterType="String">
-select order_num, order_img, order_product, order_size, order_qty, order_price, order_id, order_name from orderList where order_id=#{param1}
-</select>
 </mapper>

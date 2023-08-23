@@ -24,12 +24,15 @@ public class MainController {
 	
 	@GetMapping("/viewProduct") // 상품 상세 보기 클릭
 	public String viewProduct(HttpServletRequest req, Model model) {
+		HttpSession session = req.getSession();
+		String id = (String) session.getAttribute("id");
 		int product_id = Integer.parseInt(req.getParameter("id"));
 		ProductDTO product = pd.getProduct(product_id);
 		String size = pd.getSize(product_id);
 		String[] sizeList = size.split(",");
 		model.addAttribute("productSize",sizeList);
 		model.addAttribute("product", product);
+		session.setAttribute("id",id);
 		return "viewProduct";
 	}
 	

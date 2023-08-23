@@ -50,6 +50,7 @@ b { cursor: pointer;}
                     	<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
 	                    	<li class="nav-item dropdown">
 		                    	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style='font-weight:bold;'><Strong id=userName>${name}</Strong> 님</a>
+		                    	<input type="hidden" id="userid" value="${id}">
 		                    	<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 		                    		<li><a class="dropdown-item" href="/mypage">마이페이지</a></li>
 		                    		<li><hr class="dropdown-divider" /></li>
@@ -69,7 +70,7 @@ b { cursor: pointer;}
                		    <button class="btn btn-outline-dark" id="okLoginCart">
                             <i class="bi-cart-fill me-1"></i>
                             장바구니
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">${cart}</span>
                         </button>
                     </c:if>
                 </div>
